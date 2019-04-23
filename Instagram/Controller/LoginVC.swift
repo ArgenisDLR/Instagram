@@ -10,7 +10,8 @@ import UIKit
 
 class LoginVC: UIViewController {
     
-    let emailTextField: UITextField {
+    //CREATING TEXT FIELD OBJECT
+    let emailTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "email"
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
@@ -22,9 +23,11 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(123)
+       //BACKGROUND COLOR
+        view.backgroundColor = .white
         
-
+        view.addSubview(emailTextField)
+        emailTextField.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)
     }
     
 
