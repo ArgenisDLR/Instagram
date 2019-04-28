@@ -16,7 +16,7 @@ class LoginVC: UIViewController {
         let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
         logoImageView.contentMode = .scaleAspectFill
         view.addSubview(logoImageView)
-        logoImageView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 50)
+        logoImageView.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 50)
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         view.backgroundColor = UIColor(red: 0/255, green: 120/255, blue: 175/255, alpha: 1)
@@ -25,7 +25,6 @@ class LoginVC: UIViewController {
         
     }()
     
-    //CREATING OBJECTS
     let emailTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Email"
@@ -74,10 +73,10 @@ class LoginVC: UIViewController {
         view.addSubview(logoContainerView)
         logoContainerView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 150)
         
-        configureViewComponents()
-        
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        
+        configureViewComponents()
     }
     
     //SETTING UP STACKVIEWS 
@@ -91,7 +90,7 @@ class LoginVC: UIViewController {
         stackViews.distribution = .fillEqually
         
         view.addSubview(stackViews)
-        stackViews.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 140)
+        stackViews.anchor(top: logoContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 140)
         
     }
     
